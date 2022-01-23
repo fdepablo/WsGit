@@ -39,7 +39,7 @@ Git se puede trabajar perfectamente con una terminal o línea de comandos, aunqu
 
 ## Flujo de trabajo
 
-Es muy importante entender el flujo de trabajo de Git para poder trabajar con él. Tenemos 3 secciones de trabajo dentro de un proyecto Git, a la que podremos añadirle una cuarta en caso de que queramos trabajar de manera colaborativa (siendo opcional).
+Es muy importante entender el flujo de trabajo de Git para poder trabajar con él. Tenemos 3 secciones de trabajo (tambien llamados arboles) dentro de un proyecto Git, a la que podremos añadirle una cuarta en caso de que queramos trabajar de manera colaborativa (siendo opcional).
 
 1. **Directorio de trabajo o WorkSpace**. La carpeta que contiene los ficheros con los que vamos a trabajar. Estos archivos se sacan de la base de datos comprimida en el repositorio local, y se colocan en disco para que los puedas usar o modificar.
 2. **Stage, area de preparación o Index**. Zona intermedia entre el workspace y el repositorio local. Es aquí donde vamos a poner los ficheros que están en nuestro workspace que queremos versionar en nuestra próxima confirmación.
@@ -87,7 +87,13 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
     En caso de que queramos eliminar nuestro repositorio local, simplemente borraremos la carpeta <b>.git</b>
 
-2. Para añadir ficheros al <b>stage</B>
+2. Para ver el estado de nuestro espacio de trabajo podemos usar el comando
+
+        git status
+
+    Que nos dará información sobre el estado de nuestras secciones, como por ejemplo, que archivos tenemos en el <b>stage</b> y cuáles no, o que archivos tenemos pendientes de hacer un commit. Es un comando muy usado.
+
+3. Para añadir ficheros al <b>stage</B>
 
         git add nombre_fichero
 
@@ -98,12 +104,6 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
     Para quitar ficheros del <b>stage</b> 
 
         git restore --staged NOMBRE_FICHERO
-
-3. Para ver el estado de nuestro espacio de trabajo podemos usar el comando
-
-        git status
-
-    Que nos dará información sobre que ficheros tenemos en el <b>stage</b> y cuáles no.
 
 4. Para versionar los cambios que están en el stage
 
