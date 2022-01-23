@@ -121,11 +121,11 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
     
     Que nos sacaria algo parecido a este mensaje:
 
-        commit 50f9086a6cc1161ef2fb1a682d9d828c1c3bc587 (HEAD -> master)
+        commit 5d642f7a2350ee19dc13bc2de94a96005c635ab1
         Author: Felix de Pablo <f.depablo.lobo@gmail.com>
-        Date:   Wed Jan 20 18:44:41 2021 +0100
+        Date:   Sun Jan 23 21:35:52 2022 +0100
 
-            primer commit de listaCompra.txt (mensaje)
+            Primer commit del proyecto
 
     Donde podemos ver el mensaje hash del commit (un identificador único del commit), el autor que ha realizado el commmit, la fecha en la que realizo el commit y el mensaje con el que se hizo el commit.
 
@@ -141,7 +141,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
     
     O si quieremos eliminar todos los cambios, poniendo <b>.</b>
 
-        git restore
+        git restore .
 
 8. Podemos ir a cualquier commit a ver la "foto" o estado de nuestro proyecto. Para ello usaremos el comando
 
@@ -149,18 +149,24 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
     No hace falta poner todo el mensaje hash, con poner los primero caracteres es suficiente.
 
-        git checkout 50f9086a6cc1161ef2fb1a682d9d828c1c3bc587
-        git checkout 50f90
+        git checkout 5d642f7a2350ee19dc13bc2de94a96005c635ab1
+        git checkout 5d642f7
+
+    De esta manera, <b>el workspace entero cambiara al estado en el que estaba el proyecto en el commit al que estamos apuntando</b>. Por supuesto, los demás commits no se perderán, por lo que podremos regresar en el momento que queramos. Podremos entender que nuestro repositorio local tiene registrados todos los commits de nuestro proyecto.
+
+![Commits1](img/commits1.png "Commits1")
 
 9. Cuando estamos en otro commit podemos usar el comando
 
-    git log --all
+        git log --all
 
-    Con este comando podemos ver todos los commits del proyecto, ya que por defecto el comando <b>git log</b> solo te muestra desde el commit al que estes apuntando hacia atras.
+    Con este comando podemos ver todos los commits del proyecto, ya que por defecto, el comando <b>git log</b> solo te muestra desde el commit al que estes apuntando hacia atras.
 
-10. Para regresar a nuestro último commit de nuestro proyecto principal
+10. Para regresar al último commit de nuestra rama principal
 
-    git checkout master
+        git checkout master
+
+Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto se nos persistirá el estado de nuestro proyecto en ese instante. Además, cada commit esta apuntando al siguiente commit que se hizo despues, teniendo una foto parecida a la siguiente.
 
 ## Ramas
 
