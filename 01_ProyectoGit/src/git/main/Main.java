@@ -21,6 +21,8 @@ public class Main {
 		d.setTipoVia("Calle");
 		d.setCiudad("Madrid");
 		d.setPais("España");
+		
+		System.out.println("Cambiado cosas desde un workspace");
 	}
 
 }
