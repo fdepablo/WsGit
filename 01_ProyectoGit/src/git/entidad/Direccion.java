@@ -5,6 +5,7 @@ public class Direccion {
 	private String nombreVia;
 	private String cp;
 	private String pais;
+	private String ciudad;
 	
 	public String getTipoVia() {
 		return tipoVia;
@@ -31,9 +32,17 @@ public class Direccion {
 		this.pais = pais;
 	}
 	
+	public String getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+	
 	@Override
 	public String toString() {
-		return "Direccion [tipoVia=" + tipoVia + ", nombreVia=" + nombreVia + ", cp=" + cp + ", pais=" + pais + "]";
+		return "Direccion [tipoVia=" + tipoVia + ", nombreVia=" + nombreVia + ", cp=" + cp + ", pais=" + pais
+				+ ", ciudad=" + ciudad + "]";
 	}
 	
 	
