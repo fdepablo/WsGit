@@ -1,31 +1,30 @@
-
-![GIT](img/git.png "GIT")
+![GIT](img/git.png)
 
 # GIT
 
-## Introducción
+## Introducci&oacute;n
 
 Los sistemas de gestión de versiones de código fuente son herramientas que nos permiten trabajar en equipo en el desarrollo software y mantener un histórico de versiones del proyecto en el que se trabaja.
 
 <b>Git</b> es un software de control de versiones diseñado por **Linus Torvalds**, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora incluyendo coordinar el trabajo que varias personas realizan sobre archivos compartidos en un repositorio de código.
 
-## Características más importantes
+## Caracter&iacute;sticas m&aacute;s importantes
 
 1. Gestión distribuida. Los programadores tendrán un repositorio local con el que trabajar y un repositorio remoto en el que se compartirán los cambios. Los programadores tendrán copias del repositorio remoto en el repositorio local. Estos aportan 2 grandes ventajas:
 
     - Puedes seguir trabajando, aunque el repositorio remoto esté caído
     - La información está más replicada.
 
-![REPO. DISTRI](img/repositorios_distribuidos.png "REPO. DISTRI")
+![REPO. DISTRI](img/repositorios_distribuidos.png)
 
 2. Libre y de código abierto. Git es un software libre bajo la licencia de código abierto GPL. Además de estar disponible libremente en Internet, Git puede ser usado sin tener que pagar. El código puede ser descargado y modificado si es necesario.
 
-3. Rápido y pequeño. Git no se basa en un servidor central, por eso no hay necesidad de interactuar con el servidor remoto para cada operación. Además está construido en lenguaje C y es muy liviano.
+3. Rápido y pequeño. Git no se basa en un servidor central, por eso no hay necesidad de interactuar con el servidor remoto para cada operación. Además, está construido en lenguaje C y es muy liviano.
 
 4. Ramificación sencilla. Una rama es un flujo de trabajo y sirven para hacer desarrollos
 paralelos a nuestro trabajo principal. Las ramas en un repositorio Git se manejas de una forma sencilla comparadas con otros sistemas de control de versiones.
 
-## Descarga e instalación
+## Descarga e instalaci&oacute;n
 
 Lo primero que tenemos que hacer es descargar **Git** en nuestro ordenador e instalarlo. Esto varía en función del sistema operativo. Podemos descargarlo a partir del siguiente enlace [https://git-scm.com/downloads](https://git-scm.com/downloads).
 
@@ -48,7 +47,7 @@ Es muy importante entender el flujo de trabajo de Git para poder trabajar con é
 
 En la siguiente imagen podemos ver estas secciones
 
-![Workflow Git](img/workflow_git.jpg "Workflow Git")
+![Workflow Git](img/workflow_git.jpg)
 
 Un flujo de trabajo básico en Git sería:
 
@@ -91,7 +90,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
         git status
 
-    Que nos dará información sobre el estado de nuestras secciones, como por ejemplo, que archivos tenemos en el <b>stage</b> y cuáles no, o que archivos tenemos pendientes de hacer un commit. Es un comando muy usado.
+    Que nos dará información sobre el estado de nuestras secciones, por ejemplo, que archivos tenemos en el <b>stage</b> y cuáles no, o que archivos tenemos pendientes de hacer un commit. Es un comando muy usado.
 
 3. Para añadir ficheros al <b>stage</B>
 
@@ -113,13 +112,13 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
         git commit -m "DESCRIPCION DEL COMMIT". 
     
-    Todos los commits estan asociados a un usuario con un correo.
+    Todos los commits están asociados a un usuario con un correo.
 
 5. Podemos ver todo nuestro historial de cambios con el comando
     
         git log
     
-    Que nos sacaria algo parecido a este mensaje:
+    Que nos sacaría algo parecido a este mensaje:
 
         commit 5d642f7a2350ee19dc13bc2de94a96005c635ab1
         Author: Felix de Pablo <f.depablo.lobo@gmail.com>
@@ -154,151 +153,258 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
     De esta manera, <b>el workspace entero cambiara al estado en el que estaba el proyecto en el commit al que estamos apuntando</b>. Por supuesto, los demás commits no se perderán, por lo que podremos regresar en el momento que queramos. Podremos entender que nuestro repositorio local tiene registrados todos los commits de nuestro proyecto.
 
-![Commits1](img/commits1.png "Commits1")
+![Commits1](img/commits1.png)
 
 9. Cuando estamos en otro commit podemos usar el comando
 
         git log --all
 
-    Con este comando podemos ver todos los commits del proyecto, ya que por defecto, el comando <b>git log</b> solo te muestra desde el commit al que estes apuntando hacia atras.
+    Con este comando podemos ver todos los commits del proyecto, ya que por defecto, el comando <b>git log</b> solo te muestra desde el commit al que estes apuntando hacia atrás en el tiempo.
 
 10. Para regresar al último commit de nuestra rama principal
 
         git checkout master
 
-Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto se nos persistirá el estado de nuestro proyecto en ese instante. Además, cada commit esta apuntando al siguiente commit que se hizo despues, teniendo una foto parecida a la siguiente.
+Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto se nos persistirá el estado de nuestro proyecto en ese instante. Además, cada commit está apuntando al siguiente commit que se hizo despues, teniendo una foto parecida a la siguiente.
+
+11. Si queremos ver el detalle de los cambios que hicimos en un commit podemos usar el comando
+
+        git show MENSAJE_HASH
 
 ## Ramas
 
-11. Ramas, una rama es un flujo de trabajo, sirven para hacer desarrollos
-paralelos a nuestro trabajo principal, sin necesidad de estropear los 
-cambios en el desarrollo principal. Por defecto git trabaja sobre la rama
-master, que sería la principal. Las ramas en git son punteros o referencias
-que apuntan siempre al último commit de la rama a la que pertenecen. 
-Podemos entender los commit como los objetos en java (poo), los commits 
-son los que guardan las diferentes versiones o estados de nuestro repositorio. 
-Podemos entenderlo tambien como fotos de nuestro repositorio.
-Podemos crear ramas con el comando -> git checkout -b nombre_rama
+### Concepto de rama o branch
 
-12. podemos ver las ramas que tenemos con -> git branch
+Una **rama o “branch”** se crea para ejecutar una nueva línea de desarrollo o versión. Git tiene una rama principal llamada **master** o **main** dependiendo de la versión. Antiguamente la rama principal se llamaba **master** pero con la llegada del lenguaje inclusivo se cambio a **main**. Podemos encontrarla de ambas maneras, pero en esta guía vamos a referirnos a la rama principal como **master** ya que actualmente es el más común.
 
-    - Podemos empezar a hacer desarrollos y commits sobre la rama
-    actual en la que hemos creado. Siempre que hagamos un commit avanza
-    el puntero de la rama con la que estamos trabajando y el puntero HEAD
+Las **ramas** en git son simplemente punteros o referencias que apuntan a un commit. La idea es muy similar a las referencias de POO (como Java), las ramas serían equivalentes a las referencias y los commits serían equivalentes a los objetos. Los commits guardan los diferentes estados de nuestro repositorio mientras que las ramas apuntan a dichos commits.
 
-13. Podemos fusionar ramas ýendonos a la rama donde queremos hacer la
-fusion, y luego ejecutar el comando -> git merge rama_a_fusionar
-por ejemplo, podemos ir a master y ejecutar git merge videojuegos
+![ramas git](img/desarrollo-con-ramas-git.jpg)
 
-Cuando fusionarmos ramas puede haber conflictos en caso de que varias 
-personas hayan estado trabajando con los mismos ficheros.
+### Concepto de HEAD
 
-    - Para ver de manera grafica las ramas y los commits podemos
-    ejecutar -> git log --graph --abbrev-commit --decorate --all
+Entender el concepto de **HEAD** es fundamental para poder trabajar en Git con ramas. **HEAD** es una referencia o puntero a la rama donde te encuentras en cada momento (que a su vez la rama apunta a un commit). Además, a donde este apuntando el HEAD, <b>será el commit con el que estamos trabajando</b>. 
 
-14. para borrar una rama (es un puntero o una referencia) se ejecuta
-el comando -> git branch -d nombre_rama
+Por defecto el puntero HEAD está apuntando a la rama **master**, aunque también podemos hacer que apunte directamente a un commit tal y como vimos con el comando **git checkout**. Es decir, cuando hacemos un **git checkout** a un commit, realmente lo que estamos es **moviendo el puntero HEAD a ese commit**.
 
-15. Si queremos ver el detalle de los cambios que hicimos en un commit
-podemos usar el comando -> git show codigo_sha1
+Siempre que hagamos commit en una rama a la que estamos apuntando con HEAD, la rama y el HEAD avanzará automáticamente hasta el nuevo commit que hayamos hecho.
 
-16. Si creamos una nueva rama y trabajamos con cambios en un fichero y 
-ese fichero no va a ser usado por más ramas, no hay problema de hacer 
-"merge" entre distintas ramas. ¡Pero ojo! si varias ramas se pisan sobre 
-las mismas lineas del fichero, puede haber conflictos.
+![head-master](img/head-master.png)
 
-17. con el comando "Gitk" podemos hacernos una idea generica de nuestro
-repositorio a nivel de commits, se nos abré un programita de git 
-totalmente visual.
+### Estado "detached HEAD"
 
-18. Cuando fusionamos dos ramas que han estado trabajando con el mismos
-fichero, git por defecto fusiona todos los cambios de ambas ramas. Luego
-son los programadores los que deben decidir con que parte del codigo 
-se quedan (¡puede ser todo!) y a continacion hacer un nuevo commmit
+Hay que tener cuidado cuando apuntamos a un commit directamente en vez de a una rama con el puntero HEAD, ya que no es su estado ideal. Siempre que apuntemos a un commit directamente con el comando **checkout** estaremos en estado **detached** y git nos mostrará un mensaje como el siguiente
 
-19. Si en algun caso no queremos versionar algun o algunos de los ficheros
-que tenemos en un workspace podemos crear un fichero ".gitignore" y poner
-ahi todos los ficheros que no quiero versionar. Este fichero va en el
-directorio raiz de nuestro espacio de trabajo, y en principio, solo habra
-un fichero .gitignore
-Ejemplo de ".gitignore" de ignarar archivos de entorno de eclipse que no
-tiene sentido compartir con otros compañeros de equipo (o nosotros):
-https://github.com/fdepablo/WorkspaceJava/blob/master/.gitignore
+    You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by switching back to a branch.
 
-20. Para trabajar en un entorno colaborativo debemos de usar un repositorio
-remoto, por ejemplo, Github. Debemos de crear una cuenta y a continuacion
-un repositorio. Una vez creado el repositorio en github, nos da una serie
-de instrucciones para unirlo con un repositorio local:
-Ej: git remote add origin https://github.com/fdepablo/WsEntornosDesarrolloTelefonica.git
-remote add -> comando para decir a git que queremos contectarnos a un 
-    repositorio remoto
-origin -> es el nombre (alias) por defecto que le da git a nuestro repositorio 
-    remoto
-http://git... -> la direccion de nuestro repositorio remoto
+En este estado podemos hacer cambios o pruebas, pero NO podemos hacer commits de los cambios que hagamos. Si queremos hacer commits en un estado **"detached"** debemos crear otra rama en ese commit y apuntar con HEAD a dicha rama.
 
-21. Para subir cambios de nuestro repositorio local a nuestro repositorio
-remoto usaremos el comando -> git push -u origin master
-push -> subida al repo remoto
-origin -> el nombre del repositorio remoto donde lo subimos
-master -> nombre de la rama que queremos subir 
--u -> recordatorio de que siempre que hagamos un push, por defecto sea
-de master a origin. Es decir, a partir de este momento, todos los "git push"
-que haga seran automáticamente de la rama "master" al repositorio "origin"
+Siempre que hagamos cambios en un estado **"detached"** tenemos dos opciones:
 
-22. Una vez subido al repo remoto podemos empezar a trabajar con otros 
-compañeros (o incluso con nostros en diferentes ordenadores).
-Lo primero que hay que hacer es una clonacion del repositorio
-comando -> git clone NOMBRE_REPOSITORIO
-EJ: git clone https://github.com/fdepablo/WsEntornosDesarrolloTelefonica.git
+1. Eliminar los cambios hechos con el comando **git restore** y volver a la rama donde estábamos trabajando con el comando **git checkout NOMBRE_RAMA**. Esto suele ser lo normal en caso de que hayamos ido a un commit simplemente para hacer pruebas, pero no versionarlas.
+2. Persistir los cambios, para ello debemos de crear una rama nueva hacer un commit. Esto se suele hacer si queremos ir a un estado del proyecto del cual queremos partir para hacer un desarrollo nuevo.
 
-23. Si queremos descarganos la ultima version (commits) del repositorio
-podemos ejecutar el comando -> git pull.
+![detached](img/head-detached.png)
 
-    - OJO! en caso de que cambiemos un repositorio clonado, si hacemos
-    un pull puede que no nos lo haga porque tengamos primero que hacer
-    un commit sobre nuestro cambios, y luego resolver los posibles conflictos
+### Trabajando con ramas en Git
 
-24. Nadie podra trabajar con nuestro ws (es decir, hacer commits, pero si
-clones o pulls) a no ser que le demos permiso. Para ello hay que ir 
-a la parte de "settings" del workspace y add el usuario en "manage access".
+Vamos a ver los comandos más importantes para trabajar con ramas.
 
-25. Una de las mejores maneras de trabajar en un entorno colaborativo podría
-ser que cada integrante trabaje sobre una rama propia, e ir fusionando sus
-cambios con la rama master. Podriamos hacer los siguientes pasos:
-    1) Cada integrante del equipo se crea un rama propia local
-    Ej: git checkout -b felix_desarrollo
-    2) El integrante hace el desarrollo previsto con su rama
-    Ej: Hace los cambios y luego hace los commits que hagan falta
+1. Podemos crear ramas con los siguientes comandos
+
+        git checkout -b NOMBRE_DE_LA_RAMA
+        git branch NOMBRE_DE_LA_RAMA
+
+    Con la primera opción, crea la rama y nos cambia a dicha rama. Con la segunda opción, solamente la crea, pero permanecemos en la actual.
+
+2. Podemos ver las ramas que tenemos con el comando 
+
+        git branch
+
+3. Para borrar una rama
+
+        git branch -d NOMBRE_DE_LA_RAMA
+
+    Nótese que solo borramos la rama, es decir, la referencia. Los commits permanencen en el repositorio.
+
+4. Git cuenta de una herramienta visual para poder ver los commit y ramas que tenemos, podemos abrirla usando el siguiente comando
+
+        gitk
+    
+    Por defecto, el comando **gitk** muestra desde commit donde estemos hacia atrás en el tiempo (como el comando **log**). Si queremos mostrar todos los commits y ramas usaremos el comando
+
+        gitk --all
+
+    Tambien podemos verlo de manera similar en la consola mdiente el comando
+
+        git log --graph --abbrev-commit --decorate --all
+
+### Fusionando ramas en Git
+
+Cuando creamos ramas en un proyecto Git, nuestro historial sufre bifurcaciones, siendo cada una de esas ramas desarrollos paralelos, pero también es posible que cuando acabemos un desarrollo de una rama, queramos fusionarla con la rama principal o con otra rama.
+
+La fusión es la forma que tiene Git de volver a unir un historial bifurcado, comúnmente llamado **merge** o fusión. El comando **git merge** permite tomar las líneas independientes de desarrollo creadas e integrarlas en una sola rama.
+
+![merge](img/git-branches-merge.png)
+
+Podemos fusionar ramas posicionándonos en la rama donde queremos hacer la fusión y ejecutando el comando
+
+        git merge RAMA_QUE_QUEREMOS_FUSIONAR
+        
+Por ejemplo, si hemos creado una rama llamada "desarrollo1" y después de varios commit sobre esa rama, hemos concluido el desarrollo que estabamos buscando, podemos irnos a la rama master y ejecutar <b>git merge desarrollo1</b>.
+
+Antes de seguir, tenemos que entender el concepto de <b>conflicto</b>. Un conflicto en Git se producirá si las dos ramas que tratas de fusionar han cambiado la misma parte del mismo archivo, ya que Git no podrá averiguar qué versión utilizar. Siempre que haya un conflicto habrá que solucionarlo a mano.
+
+Cuando hagamos una fusión entre ramas, Git va a intentar siempre juntar los cambios de manera automática, pero aquí pueden ocurrir varios casos, los más importantes:
+
+1. <b>Fusión con avance rápido</b>. Cuando queremos fusionar la rama A con la rama B, pero en la rama B no hemos hecho ningún commit (solo hemos hecho commits en la rama A). En este caso se avanzará la rama B hasta la rama A (recordemos que las ramas son punteros). No se creará ningún commit nuevo ni habrá conflictos.
+
+![avance-rapido](img/fusion-avance-rapido.svg)
+
+2. <b>Fusión de tres vías SIN conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero sin conflictos entre ellas. En este caso, Git hará un commit nuevo automático uniendo todos los cambios de ambas ramas.
+
+![tres-vias](img/fusion-tres-vias.svg)
+
+<b>IMPORTANTE!</b> Nótese que tras hacer este tipo de fusión, la rama A <b>se queda atras</b> respecto a la rama B (SomeFeature vs main, en la foto). Si queremos que ambas ramas apunten al mismo commit (por ejemplo para seguir desarrollando en la rama someFeature), debemos de ir a la rama B y fusionar con la rama A y así hacer una fusión con avance rápido.
+
+3. <b>Fusión de tres vías CON conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero con conflictos entre ellas. En este caso, Git unirá ambos ramas y marcará aquellos ficheros que han dado conflicto. Git no creará ningún commit nuevo automático y se deberán de editar los ficheros para hacer la fusión a mano. Una vez resulto el conflicto, se deberá hacer un commmit con el resultado fusionado.
+
+## Etiquetar commits (Tag)
+
+En Git podemos etiquetar commits para tenerlos localizados siempre que queramos. Una **etiqueta o tag** en Git es una rama que permanece inalterada, es decir, siempre apuntará a un mismo commit.
+
+Los tags pueden ser muy útiles para marcar hitos de progreso o versiones importantes en nuestro proyecto.
+
+Para etiquetar un commit primero nos posicionaremos en dicho commit, a continuación, ejecutaremos el comando
+
+    tag VERSION
+
+Una vez creada la etiqueta, podemos usarlas para volver al estado del respositorio que marcan 
+
+    git checkout VERSION
+
+## Fichero .gitignore
+
+Por defecto, Git intentará versionar todos los ficheros que tengamos en nuestro espacio de trabajo, pero podemos evitar dicho comportamiento creando un fichero **.gitignore** en nuestro workspace.
+
+Dentro de un fichero </b>.gitignore</b> podemos poner todos los nombres de los ficheros que queremos que sean ignorados por Git a la hora de versionar. Serian como si no existieran para Git. Este fichero lo podemos crear a mano, es un fichero que no tiene nombre y cuya extensión es **.gitignore**
+
+Tenemos reglas para formar el fichero, las más importantes:
+
+1. Por cada línea ponemos un archivo o un patrón para ignorar. Ejemplo:
+    - **prueba.doc** NO versionamos dicho fichero.
+2. Los comentarios empiezan por **#**
+3. Con el caracter <b>*</b> expresamos que son todos los ficheros, por ejemplo:
+    - <b>*.txt</b> NO versionamos los ficheros que tengan extensión **.txt**
+    - <b>entornos.*</b> NO versionamos los ficheros que se llamen entornos sea cual sea su extensión.
+4. Podemos hacer excepciones a la regla anterior. Los fichero que empiecen con el carácter **!** haremos dicha excepción y Git **SI** que los versionara. Ejemplo:
+    - Si ponemos en una línea <b>.txt</b> y en otra línea **!importante.txt**, Git NO versionará ningún fichero con extensión **.txt** a excepcion del fichero **importante.txt** 
+
+El fichero .gitignore lo podemos poner donde queramos, incluso podemos tener varios. Git buscara ficheros **.gitignore** por todas las carpetas y subcarpetas de nuestro workspace.
+
+En este workspace se ha creado un .gitignore habitual para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de eclipse)
+
+## GitHub
+
+GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Suele hacer funciones de <b>repositorio remoto</b> y con el paso del tiempo ha ido cogiendo caracteristicas de las redes sociales. Es el "instagram" del código fuente.
+
+Para utilizar Gihub lo primero que debemos de hacer es una cuenta es su [página](https://github.com/). Es gratuita por lo que no debemos de pagar nada.
+
+Una vez nos hayamos hecho la cuenta ya podemos empezar a enlazar nuestros respositorios locales Github. Normalmente cuando creamos un repositorio en Github nos da una serie de instrucciones para hacerlo, en ese sentido, Github es bastante intuitivo de usar y da muchas ayudas.
+
+### Concepto de "origin"
+
+<b>"origin"</b> es el nombre predeterminado que recibe el repositorio remoto principal contra el que trabajamos. Cuando clonamos un repositorio por primera vez desde GitHub o cualquier otro sistema remoto, el nombre que se le da a ese repositorio "maestro" es <b>origin</b>. Aunque se puede cambiar, no es habitual hacerlo ya que es el convenio que marca Git. 
+
+### Trabajando con Github
+
+Una vez creado nuestro repositorio en Github debemos de enlazarlo con nuestro repositorio local, para ello usaremos el comando
+
+    git remote add origin URL_REPOSITORIO_GITHUB
+
+Para subir cambios de nuestro repositorio local a nuestro repositorio remoto usaremos el comando
+    
+    git push origin master
+
+Donde **push** es el comando para subir el contenido, **origin** es el repositorio destino y **master** es la rama que queremos subir. Al repositorio remoto NO subiremos todas nuestras ramas por defecto, solo subiremos la que le digamos.
+
+Como es muy frecuente subir cambios al repositorio remoto podemos añadir <b>-u</b> para que recuerde que el comando <b>push</b> por defecto lo haga de master a origin
+
+    git push -u origin master
+
+De esta manera, a partir de este momento podremos hacer simplemente
+
+    git push
+
+Una vez conectado al nuestro repositorio remoto y hecho el primer **push** podemos empezar a trabajar de manera colaborativa con otras personas o incluso nosotros mismo con otros ordenadores que tengamos.
+
+Lo primero que hay que hacer es una clonación del repositorio desde el ordenador que queramos
+
+    git clone DIRECCION_REPOSITORIO_GITHUB
+
+Este comando ejecuta implícitamente los siguientes
+
+    mkdir NOMBRE_DEL_REPOSITORIO_REMOTO
+    git init
+    git remote add origin DIRECCION_REPOSITORIO_GITHUB
+
+Por lo que nos facilita mucho el trabajo de creación del repositorio local y de unirlo con el repositorio remoto, ya que no tenemos que hacer nada.
+
+En Gihub, si tenemos nuestro workspace configurado como público (por defecto), cualquier persona podrá hacer un <b>clone</b> de nuestro proyecto, pero **NO** podrán hacer **push** a menos que demos los permisos en Github para hacerlo. Para ello, debemos de ir a la parte de **"settings"** del workspace que queremos compartir y añadir el usuario en **"manage access"**. El usuario debe de tener una cuenta Github.
+
+Una vez que tengamos clonado o enlazado el repositorio remoto podemos decirle a git que nos actualice nuestro repositorio local con los cambios del repositorio remoto, además de actualizarnos el workspace. Para ello ejecutaremos el comando
+
+    git pull
+
+Pero cuidado! Podría dar conflictos y deberiamos de solucionar.
+
+## Buenas prácticas para el trabajo colaborativo
+
+Git puede llegar a ser complicado de trabajar en algunos casos, sobre todo a la hora de resolver conflictos entre diferentes integrantes de un grupo de trabajo. En este apartado vamos a hablar sobre buenas prácticas para evitar problemas cuando trabajamos dentro de un equipo.
+
+Para empezar, los integrantes de un equipo deberían de evitar trabajar directamente con la rama principal de la aplicación (master o main). Es una mejor opción que cada integrante se cree una rama para hacer sus desarrollos (puede ser con su nombre, por ejemplo), y siempre intente trabajar con dicha rama.
+
+Una vez tenga su desarrollo hecho o cuando estime oportuno, puede ir fusionando los cambios con la rama principal para luego subir estos cambios al repositorio remoto.
+
+Podríamos resumirlo en los siguientes pasos:
+
+1. Cada integrante del equipo se crea un propia rama local, para desarrollar sobre ella.
+
+    git checkout -b tony_stark
+
+2. Cada integrante comienza su trabajo de desarrollo, haciendo los commits que considere necesario
+
     git add .
     git commit -m "descripcion del cambio"
-    3) Una vez que haya acabado de hacer el desarrolo y los commits con su
-    rama, nos cambiamos a la rama master, y ahi nos bajamos los posibles
-    cambios que hayan hecho los demas integrantes del equipo.
-    Ej: git checkout master
-        git pull 
-    4) Fusionamos la rama master con nuestra rama particular para hacer
-    un merge de los cambios
-    Ej: git merge felix_desarrollo
-    5) Solucionar los posibles conflictos.
-    6) Subir los cambios al repositorio remoto
-    Ej: git push origin master
-    7) Si queremos continuar con los desarrollos de nuestra rama, debemos de
-    fusinar los cambios de la rama master con la rama nuestra de 
-    desarrollo.
-    Ej: git checkout felix_desarrollo
-        git merge master
-    8) Optativo, podriamos subir nuestra rama a origin para que la viesen
-    otros integrantes del equipo. 
-    Ej: git push origin felix_desarrollo
 
-26. Otra manera de trabajar colaborativamente, es hacer un "fork" desde 
-github a otro repositorio remoto para hacernos una copia exacta del 
-repositorio al que estamos haciendo "fork", a partir de aqui nosotros
-podremos desarrollar en nuestro repositorio los cambios que queramos.
-En un momento dado podriamos solicitar un "pull request" al reposotorio
-original con los cambios que estimemos oportunos. El dueño del repositorio
-remoto orignal tendrá la ultima palabra sobre si acepta o no acepta el
-"pull request" que le estamos solicitando.
+3. Una vez hayamos acabado de hacer el desarrollo nos cambiamos a la rama master y nos bajamos los posibles cambios que hayan hecho nuestros compañeros.
+    git checkout master
+    git pull 
+    
+4. Fusionamos la rama master con nuestra rama de desarrollo
+
+    git merge tony_stark
+    
+5. Solucionamos los posibles conflictos (Si procede). Esto puede llevar a editar a mano ciertos ficheros y a crear nuevos commits con los cambios.
+
+6. Subir los cambios al repositorio remoto
+
+    git push origin master
+    
+7. Si queremos continuar con los desarrollos de nuestra rama, debemos de fusionar la rama master con la rama de desarrollo para que ambas ramas apuntenn al mismo commit. Esto solo es necesario si hemos hecho una fusión de tres vias, aunque no habría problema en hacerlo si es una fusión de avance rápido. Ver [Fusionando ramas en Git](#fusionando-ramas-en-git) para más información.
+
+    git checkout tony_stark
+    git merge master
+    
+8. (Optativo). Podríamos subir nuestra rama de desarrollo a origin para que otros integrantes puedan verla o incluso trabajar con ella. 
+    
+    git push origin tony_stark
+
+## Fork en Github
+
+Otra manera de trabajar colaborativamente en Github, es hacer un <b>fork</b> a otro repositorio remoto para hacernos una copia exacta del mismo. A partir de aquí, nosotros podremos desarrollar en esa copia los cambios que queramos, aunque no tengamos permisos para hacerlo (ya que estamos haciendo cambios sobre la copia del repositorio, no sobre el original).
+
+Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríamos solicitar un <b>pull request</b> al reposotorio original con los cambios que hemos hecho (por ejemplo, hemos mejorado una parte de su código y se lo queremos notificar). Al hacer el <b>pull request</b>, se le notificaría al autor original del repositorio los cambios enviados, pudiendo elegir si acepta o no acepta los cambios propuestos.
 
 ## Bibliografia
 
@@ -313,20 +419,20 @@ remoto orignal tendrá la ultima palabra sobre si acepta o no acepta el
 
 - [Guia oficial en español](https://git-scm.com/book/es/v2)
 - [Tutorial rápido de Git](https://rogerdudler.github.io/git-guide/index.es.html)
-- [https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud](https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud)
-- [https://marklodato.github.io/visual-git-guide/index-es.html](https://marklodato.github.io/visual-git-guide/index-es.html)
+- <https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud>
+- <https://marklodato.github.io/visual-git-guide/index-es.html>
 - [Tutorial de ramas en Git](https://www.pragma.com.co/academia/lecciones/que-es-una-rama-de-git-y-como-crearlas)
 
 ### Tutoriales interactivos
 
-- [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
-- [http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
-- [https://gitimmersion.com/](https://gitimmersion.com/)
-- [https://ohmygit.org/](https://ohmygit.org/)
+- <https://learngitbranching.js.org/>
+- <http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;>
+- <https://gitimmersion.com/>
+- <https://ohmygit.org/>
 
 ### Videos
 
-- [https://www.youtube.com/watch?v=QGKTdL7GG24&t=1486s](https://www.youtube.com/watch?v=QGKTdL7GG24&t=1486s)
+- <https://www.youtube.com/watch?v=QGKTdL7GG24&t=1486s>
 
 ### Cursos
 
@@ -337,20 +443,3 @@ remoto orignal tendrá la ultima palabra sobre si acepta o no acepta el
 
 - [Herramientas visuales](https://git-scm.com/downloads/guis)
 - [Guia rápida de markdown](http://warpedvisions.org/projects/markdown-cheat-sheet)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
