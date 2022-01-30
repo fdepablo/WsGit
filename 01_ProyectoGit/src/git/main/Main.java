@@ -1,5 +1,6 @@
 package git.main;
 
+import git.entidad.Direccion;
 import git.entidad.Persona;
 
 public class Main {
@@ -13,6 +14,11 @@ public class Main {
 		p.setEdad(45);
 		
 		System.out.println(p);
+		
+		Direccion d = new Direccion();
+		d.setNombreVia("De la plata");
+		d.setTipoVia("Calle");
+		d.setPais("Argentina");
 	}
 
 }
