@@ -23,5 +23,10 @@ public class Coche {
 		this.modelo = modelo;
 	}
 	
+	@Override
+	public String toString() {
+		return "Coche [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + "]";
+	}
+	
 	
 }
