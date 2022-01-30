@@ -153,7 +153,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
     De esta manera, <b>el workspace entero cambiara al estado en el que estaba el proyecto en el commit al que estamos apuntando</b>. Por supuesto, los demás commits no se perderán, por lo que podremos regresar en el momento que queramos. Podremos entender que nuestro repositorio local tiene registrados todos los commits de nuestro proyecto.
 
-![Commits1](img/commits1.png)
+![Commits1](dibujos_clase/commits1.png)
 
 9. Cuando estamos en otro commit podemos usar el comando
 
@@ -277,7 +277,7 @@ Los tags pueden ser muy útiles para marcar hitos de progreso o versiones import
 
 Para etiquetar un commit primero nos posicionaremos en dicho commit, a continuación, ejecutaremos el comando
 
-    tag VERSION
+    git tag VERSION
 
 Una vez creada la etiqueta, podemos usarlas para volver al estado del respositorio que marcan 
 
@@ -287,22 +287,22 @@ Una vez creada la etiqueta, podemos usarlas para volver al estado del respositor
 
 Por defecto, Git intentará versionar todos los ficheros que tengamos en nuestro espacio de trabajo, pero podemos evitar dicho comportamiento creando un fichero **.gitignore** en nuestro workspace.
 
-Dentro de un fichero </b>.gitignore</b> podemos poner todos los nombres de los ficheros que queremos que sean ignorados por Git a la hora de versionar. Serian como si no existieran para Git. Este fichero lo podemos crear a mano, es un fichero que no tiene nombre y cuya extensión es **.gitignore**
+Dentro de un fichero </b>.gitignore</b> podemos poner todos los nombres de los ficheros que queremos que sean ignorados por Git a la hora de versionar. Serian como si no existieran para Git. Este fichero normalmente lo crearemos a mano, es un fichero que no tiene nombre y cuya extensión es **.gitignore**
 
-Tenemos reglas para formar el fichero, las más importantes:
+Tenemos muchas reglas para formar el fichero, las más importantes:
 
-1. Por cada línea ponemos un archivo o un patrón para ignorar. Ejemplo:
+1. Por cada línea ponemos un archivo, directorio o un patrón para ignorar. Ejemplo:
     - **prueba.doc** NO versionamos dicho fichero.
 2. Los comentarios empiezan por **#**
 3. Con el caracter <b>*</b> expresamos que son todos los ficheros, por ejemplo:
     - <b>*.txt</b> NO versionamos los ficheros que tengan extensión **.txt**
     - <b>entornos.*</b> NO versionamos los ficheros que se llamen entornos sea cual sea su extensión.
-4. Podemos hacer excepciones a la regla anterior. Los fichero que empiecen con el carácter **!** haremos dicha excepción y Git **SI** que los versionara. Ejemplo:
+4. Podemos hacer excepciones a las reglas anteriores. Los fichero que empiecen con el carácter **!** haremos dicha excepción y Git **SI** que los versionara. Ejemplo:
     - Si ponemos en una línea <b>.txt</b> y en otra línea **!importante.txt**, Git NO versionará ningún fichero con extensión **.txt** a excepcion del fichero **importante.txt** 
 
-El fichero .gitignore lo podemos poner donde queramos, incluso podemos tener varios. Git buscara ficheros **.gitignore** por todas las carpetas y subcarpetas de nuestro workspace.
+El fichero **.gitignore** lo podemos poner donde queramos dentro de nuestro espacio de trabajo, incluso podemos tener varios. Git buscara ficheros **.gitignore** por todas las carpetas y subcarpetas de nuestro workspace.
 
-En este workspace se ha creado un .gitignore habitual para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de eclipse)
+En este workspace se ha creado un **.gitignore** para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de Eclipse)
 
 ## GitHub
 
