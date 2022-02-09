@@ -38,7 +38,7 @@ Git se puede trabajar perfectamente con una terminal o línea de comandos, aunqu
 
 ## Flujo de trabajo
 
-Es muy importante entender el flujo de trabajo de Git para poder trabajar con él. Tenemos 3 secciones de trabajo (tambien llamados arboles) dentro de un proyecto Git, a la que podremos añadirle una cuarta en caso de que queramos trabajar de manera colaborativa (siendo opcional).
+Es muy importante entender el flujo de trabajo de Git para poder trabajar con él. Tenemos 3 secciones de trabajo (también llamados arboles) dentro de un proyecto Git, a la que podremos añadirle una cuarta en caso de que queramos trabajar de manera colaborativa (siendo opcional).
 
 1. **Directorio de trabajo o WorkSpace**. La carpeta que contiene los ficheros con los que vamos a trabajar. Estos archivos se sacan de la base de datos comprimida en el repositorio local, y se colocan en disco para que los puedas usar o modificar.
 2. **Stage, area de preparación o Index**. Zona intermedia entre el workspace y el repositorio local. Es aquí donde vamos a poner los ficheros que están en nuestro workspace que queremos versionar en nuestra próxima confirmación.
@@ -108,7 +108,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
         git commit
     
-    Todos los commits que se hagan tienen que tener un mensaje, por lo tanto, es más común utilizar el comando
+    Todos los commits que se hagan deben tener un mensaje, por lo tanto, es más común utilizar el comando
 
         git commit -m "DESCRIPCION DEL COMMIT". 
     
@@ -165,7 +165,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
         git checkout master
 
-Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto se nos persistirá el estado de nuestro proyecto en ese instante. Además, cada commit está apuntando al siguiente commit que se hizo despues, teniendo una foto parecida a la siguiente.
+Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto se nos persistirá el estado de nuestro proyecto en ese instante. Además, cada commit está apuntando al siguiente commit que se hizo después, teniendo una foto parecida a la siguiente.
 
 11. Si queremos ver el detalle de los cambios que hicimos en un commit podemos usar el comando
 
@@ -175,7 +175,7 @@ Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto 
 
 ### Concepto de rama o branch
 
-Una **rama o “branch”** se crea para ejecutar una nueva línea de desarrollo o versión. Git tiene una rama principal llamada **master** o **main** dependiendo de la versión. Antiguamente la rama principal se llamaba **master** pero con la llegada del lenguaje inclusivo se cambio a **main**. Podemos encontrarla de ambas maneras, pero en esta guía vamos a referirnos a la rama principal como **master** ya que actualmente es el más común.
+Una **rama o “branch”** se crea para ejecutar una nueva línea de desarrollo o versión. Git tiene una rama principal llamada **master** o **main** dependiendo de la versión. Antiguamente la rama principal se llamaba **master** pero con la llegada del lenguaje inclusivo se cambió a **main**. Podemos encontrarla de ambas maneras, pero en esta guía vamos a referirnos a la rama principal como **master** ya que actualmente es el más común.
 
 Las **ramas** en git son simplemente punteros o referencias que apuntan a un commit. La idea es muy similar a las referencias de POO (como Java), las ramas serían equivalentes a las referencias y los commits serían equivalentes a los objetos. Los commits guardan los diferentes estados de nuestro repositorio mientras que las ramas apuntan a dichos commits.
 
@@ -225,7 +225,7 @@ Vamos a ver los comandos más importantes para trabajar con ramas.
 
         git branch -d NOMBRE_DE_LA_RAMA
 
-    Nótese que solo borramos la rama, es decir, la referencia. Los commits permanencen en el repositorio.
+    Nótese que solo borramos la rama, es decir, la referencia. Los commits permanecen en el repositorio.
 
 4. Git cuenta de una herramienta visual para poder ver los commit y ramas que tenemos, podemos abrirla usando el siguiente comando
 
@@ -261,13 +261,13 @@ Cuando hagamos una fusión entre ramas, Git va a intentar siempre juntar los cam
 
 ![avance-rapido](img/fusion-avance-rapido.svg)
 
-2. <b>Fusión de tres vías SIN conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero sin conflictos entre ellas. En este caso, Git hará un commit nuevo automático uniendo todos los cambios de ambas ramas.
+2. <b>Fusión de tres vías SIN conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero sin conflictos entre ellas. En este caso, **Git hará un commit nuevo de manera automática**, uniendo todos los cambios de ambas ramas.
 
 ![tres-vias](img/fusion-tres-vias.svg)
 
-<b>IMPORTANTE!</b> Nótese que tras hacer este tipo de fusión, la rama A <b>se queda atras</b> respecto a la rama B (SomeFeature vs main, en la foto). Si queremos que ambas ramas apunten al mismo commit (por ejemplo para seguir desarrollando en la rama someFeature), debemos de ir a la rama B y fusionar con la rama A y así hacer una fusión con avance rápido.
+<b>¡IMPORTANTE!</b> Nótese que tras hacer este tipo de fusión, la rama A <b>se queda atras</b> respecto a la rama B (SomeFeature vs main, en la foto). Si queremos que ambas ramas apunten al mismo commit (por ejemplo, para seguir desarrollando en la rama someFeature), debemos de ir a la rama B y fusionar con la rama A y así hacer una fusión con avance rápido.
 
-3. <b>Fusión de tres vías CON conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero con conflictos entre ellas. En este caso, Git unirá ambos ramas y marcará aquellos ficheros que han dado conflicto. Git no creará ningún commit nuevo automático y se deberán de editar los ficheros para hacer la fusión a mano. Una vez resulto el conflicto, se deberá hacer un commmit con el resultado fusionado.
+3. <b>Fusión de tres vías CON conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero con conflictos entre ellas. En este caso, Git unirá ambos ramas y marcará aquellos ficheros que han dado conflicto. **Git no creará ningún commit nuevo de manera automática** y se deberán de editar los ficheros para hacer la fusión a mano. Una vez resulto el conflicto, se deberá hacer un commmit con el resultado fusionado.
 
 ## Etiquetar commits (Tag)
 
@@ -279,7 +279,7 @@ Para etiquetar un commit primero nos posicionaremos en dicho commit, a continuac
 
     git tag VERSION
 
-Una vez creada la etiqueta, podemos usarlas para volver al estado del respositorio que marcan 
+Una vez creada la etiqueta, podemos usarlas para volver al estado del repositorio que marcan 
 
     git checkout VERSION
 
@@ -306,15 +306,15 @@ En este workspace se ha creado un **.gitignore** para trabajar con proyectos jav
 
 ## GitHub
 
-GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Suele hacer funciones de <b>repositorio remoto</b> y con el paso del tiempo ha ido cogiendo caracteristicas de las redes sociales. Es el "instagram" del código fuente.
+GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Suele hacer funciones de <b>repositorio remoto</b> y con el paso del tiempo ha ido cogiendo caracteristicas de las redes sociales. Es el “Instagram” del código fuente.
 
 Para utilizar Gihub lo primero que debemos de hacer es una cuenta es su [página](https://github.com/). Es gratuita por lo que no debemos de pagar nada.
 
-Una vez nos hayamos hecho la cuenta ya podemos empezar a enlazar nuestros respositorios locales Github. Normalmente cuando creamos un repositorio en Github nos da una serie de instrucciones para hacerlo, en ese sentido, Github es bastante intuitivo de usar y da muchas ayudas.
+Una vez nos hayamos hecho la cuenta ya podemos empezar a enlazar nuestros repositorios locales Github. Normalmente cuando creamos un repositorio en Github nos da una serie de instrucciones para hacerlo, en ese sentido, Github es bastante intuitivo de usar y da muchas ayudas.
 
 ### Concepto de "origin"
 
-<b>"origin"</b> es el nombre predeterminado que recibe el repositorio remoto principal contra el que trabajamos. Cuando clonamos un repositorio por primera vez desde GitHub o cualquier otro sistema remoto, el nombre que se le da a ese repositorio "maestro" es <b>origin</b>. Aunque se puede cambiar, no es habitual hacerlo ya que es el convenio que marca Git. 
+<b>origin</b> es el nombre predeterminado que recibe el repositorio remoto principal contra el que trabajamos. Cuando clonamos un repositorio por primera vez desde GitHub o cualquier otro sistema remoto, el nombre que se le da a ese repositorio "maestro" es <b>origin</b>. Aunque se puede cambiar, no es habitual hacerlo ya que es el convenio que marca Git. 
 
 ### Trabajando con Github
 
@@ -347,16 +347,17 @@ Este comando ejecuta implícitamente los siguientes
     mkdir NOMBRE_DEL_REPOSITORIO_REMOTO
     git init
     git remote add origin DIRECCION_REPOSITORIO_GITHUB
+    git pull
 
 Por lo que nos facilita mucho el trabajo de creación del repositorio local y de unirlo con el repositorio remoto, ya que no tenemos que hacer nada.
 
 En Gihub, si tenemos nuestro workspace configurado como público (por defecto), cualquier persona podrá hacer un <b>clone</b> de nuestro proyecto, pero **NO** podrán hacer **push** a menos que demos los permisos en Github para hacerlo. Para ello, debemos de ir a la parte de **"settings"** del workspace que queremos compartir y añadir el usuario en **"manage access"**. El usuario debe de tener una cuenta Github.
 
-Una vez que tengamos clonado o enlazado el repositorio remoto podemos decirle a git que nos actualice nuestro repositorio local con los cambios del repositorio remoto, además de actualizarnos el workspace. Para ello ejecutaremos el comando
+Una vez que tengamos clonado o enlazado el repositorio remoto podemos decirle a Git que nos actualice nuestro repositorio local con los cambios del repositorio remoto, además de actualizarnos el workspace. Para ello ejecutaremos el comando
 
     git pull
 
-Pero cuidado! Podría dar conflictos y deberiamos de solucionar.
+¡Cuidado!, podría dar conflictos que deberíamos de solucionar.
 
 ## Buenas prácticas para el trabajo colaborativo
 
@@ -370,35 +371,36 @@ Podríamos resumirlo en los siguientes pasos:
 
 1. Cada integrante del equipo se crea un propia rama local, para desarrollar sobre ella.
 
-    git checkout -b tony_stark
+        git checkout -b tony_stark
 
 2. Cada integrante comienza su trabajo de desarrollo, haciendo los commits que considere necesario
 
-    git add .
-    git commit -m "descripcion del cambio"
+        git add .
+        git commit -m "descripcion del cambio"
 
 3. Una vez hayamos acabado de hacer el desarrollo nos cambiamos a la rama master y nos bajamos los posibles cambios que hayan hecho nuestros compañeros.
-    git checkout master
-    git pull 
     
+        git checkout master
+        git pull
+
 4. Fusionamos la rama master con nuestra rama de desarrollo
 
-    git merge tony_stark
+        git merge tony_stark
     
 5. Solucionamos los posibles conflictos (Si procede). Esto puede llevar a editar a mano ciertos ficheros y a crear nuevos commits con los cambios.
 
 6. Subir los cambios al repositorio remoto
 
-    git push origin master
+        git push origin master
     
 7. Si queremos continuar con los desarrollos de nuestra rama, debemos de fusionar la rama master con la rama de desarrollo para que ambas ramas apuntenn al mismo commit. Esto solo es necesario si hemos hecho una fusión de tres vias, aunque no habría problema en hacerlo si es una fusión de avance rápido. Ver [Fusionando ramas en Git](#fusionando-ramas-en-git) para más información.
 
-    git checkout tony_stark
-    git merge master
+        git checkout tony_stark    
+        git merge master
     
 8. (Optativo). Podríamos subir nuestra rama de desarrollo a origin para que otros integrantes puedan verla o incluso trabajar con ella. 
     
-    git push origin tony_stark
+        git push origin tony_stark
 
 ## Fork en Github
 
@@ -443,3 +445,4 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 
 - [Herramientas visuales](https://git-scm.com/downloads/guis)
 - [Guia rápida de markdown](http://warpedvisions.org/projects/markdown-cheat-sheet)
+- <https://typora.io/>
