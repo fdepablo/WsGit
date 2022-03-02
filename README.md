@@ -138,7 +138,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
         git restore NOMBRE_FICHERO 
     
-    O si quieremos eliminar todos los cambios, poniendo <b>.</b>
+    O si queremos eliminar todos los cambios:
 
         git restore .
 
@@ -302,7 +302,9 @@ Tenemos muchas reglas para formar el fichero, las más importantes:
 
 El fichero **.gitignore** lo podemos poner donde queramos dentro de nuestro espacio de trabajo, incluso podemos tener varios. Git buscara ficheros **.gitignore** por todas las carpetas y subcarpetas de nuestro workspace.
 
-En este workspace se ha creado un **.gitignore** para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de Eclipse)
+En este workspace se ha creado un **.gitignore** para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de Eclipse).
+
+**IMPORTANTE:** El fichero **.gitignore** se debe crear **antes del primer commit** para que funcione correctamente (despues de hacer el 'git init'). Si agregamos el fichero más adelante, los ficheros que se hayan versionado no se dejaran de versionar.
 
 ## GitHub
 
@@ -349,7 +351,7 @@ Este comando ejecuta implícitamente los siguientes
     git remote add origin DIRECCION_REPOSITORIO_GITHUB
     git pull
 
-Por lo que nos facilita mucho el trabajo de creación del repositorio local y de unirlo con el repositorio remoto, ya que no tenemos que hacer nada.
+Por lo que nos facilita mucho el trabajo de creación del repositorio local y de unirlo con el repositorio remoto.
 
 En Gihub, si tenemos nuestro workspace configurado como público (por defecto), cualquier persona podrá hacer un <b>clone</b> de nuestro proyecto, pero **NO** podrán hacer **push** a menos que demos los permisos en Github para hacerlo. Para ello, debemos de ir a la parte de **"settings"** del workspace que queremos compartir y añadir el usuario en **"manage access"**. El usuario debe de tener una cuenta Github.
 
@@ -368,6 +370,8 @@ Para empezar, los integrantes de un equipo deberían de evitar trabajar directam
 Una vez tenga su desarrollo hecho o cuando estime oportuno, puede ir fusionando los cambios con la rama principal para luego subir estos cambios al repositorio remoto.
 
 Podríamos resumirlo en los siguientes pasos:
+
+0. Cada integrante se crea su repositorio local y lo sincroniza con el repositorio remoto.
 
 1. Cada integrante del equipo se crea un propia rama local, para desarrollar sobre ella.
 
@@ -398,7 +402,7 @@ Podríamos resumirlo en los siguientes pasos:
         git checkout tony_stark    
         git merge master
     
-8. (Optativo). Podríamos subir nuestra rama de desarrollo a origin para que otros integrantes puedan verla o incluso trabajar con ella. 
+8. (Optativo). Podríamos subir nuestra rama de desarrollo a **origin** para que otros integrantes puedan verla o incluso trabajar con ella. 
     
         git push origin tony_stark
 
