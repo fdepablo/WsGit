@@ -110,7 +110,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
     
     Todos los commits que se hagan deben tener un mensaje, por lo tanto, es más común utilizar el comando
 
-        git commit -m "DESCRIPCION DEL COMMIT". 
+        git commit -m "DESCRIPCION DEL COMMIT"
     
     Todos los commits están asociados a un usuario con un correo.
 
@@ -170,6 +170,10 @@ Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto 
 11. Si queremos ver el detalle de los cambios que hicimos en un commit podemos usar el comando
 
         git show MENSAJE_HASH
+
+12. Podemos unir el comando "add" y el comando "commit" en una sola sentencia, pero en este caso se hará commit de todos los cambios
+
+        git commit -am "DESCRIPCION DEL COMMIT"
 
 ## Ramas
 
