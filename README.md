@@ -171,9 +171,11 @@ Tenemos que entender que por cada **commit** que hagamos sobre nuestro proyecto 
 
         git show MENSAJE_HASH
 
-12. Podemos unir el comando "add" y el comando "commit" en una sola sentencia, pero en este caso se hará commit de todos los cambios
+12. Podemos unir el comando "add" y el comando "commit" en una sola sentencia.
 
         git commit -am "DESCRIPCION DEL COMMIT"
+
+**¡Ojo con este comando!** Solo vale para cambios sobre ficheros o carpetas ya versionados. En caso de que tengamos ficheros o carpetas nuevos, hay que hacer primero un **git add** de los ficheros o carpetas en cuestión.
 
 ## Ramas
 
