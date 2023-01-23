@@ -423,7 +423,7 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 ### Documentación y tutoriales en inglés
 
 - [Guia oficial en inglés](https://git-scm.com/book/en/v2)
-- [https://danielkummer.github.io/git-flow-cheatsheet/](https://danielkummer.github.io/git-flow-cheatsheet/)
+- [Tutorial de Git](https://danielkummer.github.io/git-flow-cheatsheet/)
 - [Flujo de trabajo en Git](https://dev.to/mollynem/git-github--workflow-fundamentals-5496)
 - [Estado "detached" en Git](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
 
@@ -431,8 +431,9 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 
 - [Guia oficial en español](https://git-scm.com/book/es/v2)
 - [Tutorial rápido de Git](https://rogerdudler.github.io/git-guide/index.es.html)
-- <https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud>
-- <https://marklodato.github.io/visual-git-guide/index-es.html>
+- [Creación del token de GitHub](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- [Tutorial de Git Atalasian](https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud)
+- [Tutorial visual de Git](https://marklodato.github.io/visual-git-guide/index-es.html)
 - [Tutorial de ramas en Git](https://www.pragma.com.co/academia/lecciones/que-es-una-rama-de-git-y-como-crearlas)
 
 ### Tutoriales interactivos
@@ -448,11 +449,10 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 
 ### Cursos
 
-- [Fundamentos de Git y GitHub](https://devcode.la/cursos/git/)
 - [Curso en GitHub](https://github.com/oslugr/curso-git)
 
 ### Otros enlaces de interes
 
 - [Herramientas visuales](https://git-scm.com/downloads/guis)
-- [Guia rápida de markdown](http://warpedvisions.org/projects/markdown-cheat-sheet)
-- <https://typora.io/>
+- [Guia rápida de markdown](https://tutorialmarkdown.com/guia)
+- [Escritor y lector markdown](https://typora.io/)
