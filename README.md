@@ -126,7 +126,7 @@ En nuestro caso, este workspace esta creado con Eclipse, pero podríamos haber u
 
             Primer commit del proyecto
 
-    Donde podemos ver el mensaje hash del commit (un identificador único del commit), el autor que ha realizado el commmit, la fecha en la que realizo el commit y el mensaje con el que se hizo el commit.
+    Donde podemos ver el mensaje hash del commit (un identificador único del commit), el autor que ha realizado el commit, la fecha en la que realizo el commit y el mensaje con el que se hizo el commit.
 
     <b>git log</b> nos saca todos los commits realizados, si pulsamos las flechas arriba y abajo de nuestro teclado podemos ir viendo el histórico. Si queremos cerrar el log debemos de pulsar la tecla <b>q</b>
 
@@ -241,7 +241,7 @@ Vamos a ver los comandos más importantes para trabajar con ramas.
 
         gitk --all
 
-    Tambien podemos verlo de manera similar en la consola mdiente el comando
+    También podemos verlo de manera similar en la consola mediante el comando
 
         git log --graph --abbrev-commit --decorate --all
 
@@ -257,7 +257,7 @@ Podemos fusionar ramas posicionándonos en la rama donde queremos hacer la fusi�
 
         git merge RAMA_QUE_QUEREMOS_FUSIONAR
         
-Por ejemplo, si hemos creado una rama llamada "desarrollo1" y después de varios commit sobre esa rama, hemos concluido el desarrollo que estabamos buscando, podemos irnos a la rama master y ejecutar <b>git merge desarrollo1</b>.
+Por ejemplo, si hemos creado una rama llamada "desarrollo1" y después de varios commit sobre esa rama, hemos concluido el desarrollo que estábamos buscando, podemos irnos a la rama master y ejecutar <b>git merge desarrollo1</b>.
 
 Antes de seguir, tenemos que entender el concepto de <b>conflicto</b>. Un conflicto en Git se producirá si las dos ramas que tratas de fusionar han cambiado la misma parte del mismo archivo, ya que Git no podrá averiguar qué versión utilizar. Siempre que haya un conflicto habrá que solucionarlo a mano.
 
@@ -273,7 +273,7 @@ Cuando hagamos una fusión entre ramas, Git va a intentar siempre juntar los cam
 
 <b>¡IMPORTANTE!</b> Nótese que tras hacer este tipo de fusión, la rama A <b>se queda atras</b> respecto a la rama B (SomeFeature vs main, en la foto). Si queremos que ambas ramas apunten al mismo commit (por ejemplo, para seguir desarrollando en la rama someFeature), debemos de ir a la rama B y fusionar con la rama A y así hacer una fusión con avance rápido.
 
-3. <b>Fusión de tres vías CON conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero con conflictos entre ellas. En este caso, Git unirá ambos ramas y marcará aquellos ficheros que han dado conflicto. **Git no creará ningún commit nuevo de manera automática** y se deberán de editar los ficheros para hacer la fusión a mano. Una vez resulto el conflicto, se deberá hacer un commmit con el resultado fusionado.
+3. <b>Fusión de tres vías CON conflicto</b>. Cuando queremos fusionar la rama A con la rama B habiendo hecho commits en ambas ramas, pero con conflictos entre ellas. En este caso, Git unirá ambos ramas y marcará aquellos ficheros que han dado conflicto. **Git no creará ningún commit nuevo de manera automática** y se deberán de editar los ficheros para hacer la fusión a mano. Una vez resulto el conflicto, se deberá hacer un commit con el resultado fusionado.
 
 ## Etiquetar commits (Tag)
 
@@ -293,28 +293,30 @@ Una vez creada la etiqueta, podemos usarlas para volver al estado del repositori
 
 Por defecto, Git intentará versionar todos los ficheros que tengamos en nuestro espacio de trabajo, pero podemos evitar dicho comportamiento creando un fichero **.gitignore** en nuestro workspace.
 
-Dentro de un fichero </b>.gitignore</b> podemos poner todos los nombres de los ficheros que queremos que sean ignorados por Git a la hora de versionar. Serian como si no existieran para Git. Este fichero normalmente lo crearemos a mano, es un fichero que no tiene nombre y cuya extensión es **.gitignore**
+Dentro de un fichero </b>.gitignore</b> podemos poner todos los nombres de los ficheros que queremos que sean ignorados por Git a la hora de versionar. Serian como si no existieran para Git. Este fichero normalmente lo crearemos a mano, es un fichero que **no tiene nombre** y cuya extensión es **.gitignore**
+
+**NOTA:** Windows por defecto oculta las extensiones de los ficheros. Para crear un fichero **.gitignore** debemos de tener habilitadas las extensiones y de esta manera, cambiar la extensión del mismo. Si hemos creado bien el fichero, el tipo de fichero nos aparecerá en Windows como **GITIGNORE**
 
 Tenemos muchas reglas para formar el fichero, las más importantes:
 
 1. Por cada línea ponemos un archivo, directorio o un patrón para ignorar. Ejemplo:
     - **prueba.doc** NO versionamos dicho fichero.
 2. Los comentarios empiezan por **#**
-3. Con el caracter <b>*</b> expresamos que son todos los ficheros, por ejemplo:
+3. Con el carácter <b>*</b> expresamos que son todos los ficheros, por ejemplo:
     - <b>*.txt</b> NO versionamos los ficheros que tengan extensión **.txt**
     - <b>entornos.*</b> NO versionamos los ficheros que se llamen entornos sea cual sea su extensión.
 4. Podemos hacer excepciones a las reglas anteriores. Los fichero que empiecen con el carácter **!** haremos dicha excepción y Git **SI** que los versionara. Ejemplo:
-    - Si ponemos en una línea <b>.txt</b> y en otra línea **!importante.txt**, Git NO versionará ningún fichero con extensión **.txt** a excepcion del fichero **importante.txt** 
+    - Si ponemos en una línea <b>.txt</b> y en otra línea **!importante.txt**, Git NO versionará ningún fichero con extensión **.txt** a excepción del fichero **importante.txt** 
 
 El fichero **.gitignore** lo podemos poner donde queramos dentro de nuestro espacio de trabajo, incluso podemos tener varios. Git buscara ficheros **.gitignore** por todas las carpetas y subcarpetas de nuestro workspace.
 
 En este workspace se ha creado un **.gitignore** para trabajar con proyectos java, ignorando todo aquello que no tiene que ver con el código o las configuraciones de los proyectos (como por ejemplo, los metadatos de Eclipse).
 
-**IMPORTANTE:** El fichero **.gitignore** se debe crear **antes del primer commit** para que funcione correctamente (despues de hacer el 'git init'). Si agregamos el fichero más adelante, los ficheros que se hayan versionado no se dejaran de versionar.
+**IMPORTANTE:** El fichero **.gitignore** se debe crear **antes del primer commit** para que funcione correctamente (después de hacer el 'git init'). Si agregamos el fichero más adelante, los ficheros que se hayan versionado no se dejaran de versionar.
 
 ## GitHub
 
-GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Suele hacer funciones de <b>repositorio remoto</b> y con el paso del tiempo ha ido cogiendo caracteristicas de las redes sociales. Es el “Instagram” del código fuente.
+GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Suele hacer funciones de <b>repositorio remoto</b> y con el paso del tiempo ha ido cogiendo características de las redes sociales. Es el “Instagram” del código fuente.
 
 Para utilizar Gihub lo primero que debemos de hacer es una cuenta es su [página](https://github.com/). Es gratuita por lo que no debemos de pagar nada.
 
@@ -386,7 +388,7 @@ Podríamos resumirlo en los siguientes pasos:
 2. Cada integrante comienza su trabajo de desarrollo, haciendo los commits que considere necesario
 
         git add .
-        git commit -m "descripcion del cambio"
+        git commit -m "descripción del cambio"
 
 3. Una vez hayamos acabado de hacer el desarrollo nos cambiamos a la rama master y nos bajamos los posibles cambios que hayan hecho nuestros compañeros.
     
@@ -403,7 +405,7 @@ Podríamos resumirlo en los siguientes pasos:
 
         git push origin master
     
-7. Si queremos continuar con los desarrollos de nuestra rama, debemos de fusionar la rama master con la rama de desarrollo para que ambas ramas apuntenn al mismo commit. Esto solo es necesario si hemos hecho una fusión de tres vias, aunque no habría problema en hacerlo si es una fusión de avance rápido. Ver [Fusionando ramas en Git](#fusionando-ramas-en-git) para más información.
+7. Si queremos continuar con los desarrollos de nuestra rama, debemos de fusionar la rama master con la rama de desarrollo para que ambas ramas apunten al mismo commit. Esto solo es necesario si hemos hecho una fusión de tres vías, aunque no habría problema en hacerlo si es una fusión de avance rápido. Ver [Fusionando ramas en Git](#fusionando-ramas-en-git) para más información.
 
         git checkout tony_stark    
         git merge master
@@ -416,20 +418,20 @@ Podríamos resumirlo en los siguientes pasos:
 
 Otra manera de trabajar colaborativamente en Github, es hacer un <b>fork</b> a otro repositorio remoto para hacernos una copia exacta del mismo. A partir de aquí, nosotros podremos desarrollar en esa copia los cambios que queramos, aunque no tengamos permisos para hacerlo (ya que estamos haciendo cambios sobre la copia del repositorio, no sobre el original).
 
-Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríamos solicitar un <b>pull request</b> al reposotorio original con los cambios que hemos hecho (por ejemplo, hemos mejorado una parte de su código y se lo queremos notificar). Al hacer el <b>pull request</b>, se le notificaría al autor original del repositorio los cambios enviados, pudiendo elegir si acepta o no acepta los cambios propuestos.
+Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríamos solicitar un <b>pull request</b> al repositorio original con los cambios que hemos hecho (por ejemplo, hemos mejorado una parte de su código y se lo queremos notificar). Al hacer el <b>pull request</b>, se le notificaría al autor original del repositorio los cambios enviados, pudiendo elegir si acepta o no acepta los cambios propuestos.
 
-## Bibliografia
+## Bibliografía
 
 ### Documentación y tutoriales en inglés
 
-- [Guia oficial en inglés](https://git-scm.com/book/en/v2)
+- [Guía oficial en inglés](https://git-scm.com/book/en/v2)
 - [Tutorial de Git](https://danielkummer.github.io/git-flow-cheatsheet/)
 - [Flujo de trabajo en Git](https://dev.to/mollynem/git-github--workflow-fundamentals-5496)
 - [Estado "detached" en Git](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
 
 ### Documentación y tutoriales en español
 
-- [Guia oficial en español](https://git-scm.com/book/es/v2)
+- [Guía oficial en español](https://git-scm.com/book/es/v2)
 - [Tutorial rápido de Git](https://rogerdudler.github.io/git-guide/index.es.html)
 - [Creación del token de GitHub](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 - [Tutorial de Git Atalasian](https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud)
@@ -451,8 +453,8 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 
 - [Curso en GitHub](https://github.com/oslugr/curso-git)
 
-### Otros enlaces de interes
+### Otros enlaces de interés
 
 - [Herramientas visuales](https://git-scm.com/downloads/guis)
-- [Guia rápida de markdown](https://tutorialmarkdown.com/guia)
+- [Guía rápida de markdown](https://tutorialmarkdown.com/guia)
 - [Escritor y lector markdown](https://typora.io/)
