@@ -331,7 +331,7 @@ Una vez nos hayamos hecho la cuenta ya podemos empezar a enlazar nuestros reposi
 Una vez creado nuestro repositorio en Github debemos de enlazarlo con nuestro repositorio local, para ello usaremos el comando
 
     git remote add origin URL_REPOSITORIO_GITHUB
-
+	
 Para subir cambios de nuestro repositorio local a nuestro repositorio remoto usaremos el comando
     
     git push origin master
@@ -414,11 +414,28 @@ Podríamos resumirlo en los siguientes pasos:
     
         git push origin tony_stark
 
+    Para bajarse la rama, los demás integrantes deberán ejecutar el siguiente comando
+
+        git pull origin tony_stark
+
+    Con el anterior comando nos bajaremos la rama, pero en nuestro git estará como **remota**, es decir, el nombre de la rama será **origin/tony_stark**, y hay es posible que no la veamos a simple visa, ya que por defecto el comando **git branch** solo muestra las ramas locales. Si queremos mostrar tanto las ramas locales como remotas debemos de ejecutar el siguiente comando
+
+        git branch --all
+
+    **Nota:** Todas las ramas que empiezan por **origin** son ramas remotas.
+
+    Si queremos convertir una rama remota en una rama local para poder trabajar con ella, simplemente nos cambiaremos a ella y se nos creara dicha rama local
+
+        git checkout tony_stark
+
+    Podemos encontrar más información en el siguiente enlace [Trabajando con ramas remotas y locales](https://medium.com/@mario_gl/git-bajar-todas-las-nuevas-ramas-del-repositorio-remoto-ff02077a9251)
 ## Fork en Github
 
 Otra manera de trabajar colaborativamente en Github, es hacer un <b>fork</b> a otro repositorio remoto para hacernos una copia exacta del mismo. A partir de aquí, nosotros podremos desarrollar en esa copia los cambios que queramos, aunque no tengamos permisos para hacerlo (ya que estamos haciendo cambios sobre la copia del repositorio, no sobre el original).
 
 Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríamos solicitar un <b>pull request</b> al repositorio original con los cambios que hemos hecho (por ejemplo, hemos mejorado una parte de su código y se lo queremos notificar). Al hacer el <b>pull request</b>, se le notificaría al autor original del repositorio los cambios enviados, pudiendo elegir si acepta o no acepta los cambios propuestos.
+
+Podemos encontrar más información al respecto en el siguiente enlace [Trabajando con "pull request" en github](https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/)
 
 ## Bibliografía
 
@@ -428,6 +445,7 @@ Una de las ventajas de hacer esto, es que, si lo consideramos oportuno, podríam
 - [Tutorial de Git](https://danielkummer.github.io/git-flow-cheatsheet/)
 - [Flujo de trabajo en Git](https://dev.to/mollynem/git-github--workflow-fundamentals-5496)
 - [Estado "detached" en Git](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
+- [Conociendo más sobre el comando "git pull". Diferencias entre "pull" y "fetch"](https://www.geeksforgeeks.org/git-difference-between-git-fetch-and-git-pull/)
 
 ### Documentación y tutoriales en español
 
