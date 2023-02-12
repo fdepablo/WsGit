@@ -244,6 +244,11 @@ Vamos a ver los comandos más importantes para trabajar con ramas.
     También podemos verlo de manera similar en la consola mediante el comando
 
         git log --graph --abbrev-commit --decorate --all
+		
+5. Por último, podemos cambiar entre ramas con cualquiera de los siguientes comandos
+
+        git checkout NOMBRE_DE_LA_RAMA
+        git switch NOMBRE_DE_LA_RAMA
 
 ### Fusionando ramas en Git
 
