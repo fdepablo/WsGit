@@ -460,6 +460,7 @@ Podemos encontrar más información al respecto en el siguiente enlace [Trabajan
 - [Tutorial de Git Atalasian](https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud)
 - [Tutorial visual de Git](https://marklodato.github.io/visual-git-guide/index-es.html)
 - [Tutorial de ramas en Git](https://www.pragma.com.co/academia/lecciones/que-es-una-rama-de-git-y-como-crearlas)
+- [Tutorial del fichero '.gitignore'](https://www.atlassian.com/es/git/tutorials/saving-changes/gitignore)
 
 ### Tutoriales interactivos
 
